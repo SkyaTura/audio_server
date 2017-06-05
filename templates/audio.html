@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Welcome to wizard listening</h1>
+  </div>
+
+  <audio controls autoplay="auto" width="900">
+    <source src="/static/{{folder}}/{{file}}" type="audio/mpeg">
+      Seu navegador não suporta execução de mp3, tente novamente usando o google chrome ou o mozilla firefox.
+  </audio>
+{% endblock %}

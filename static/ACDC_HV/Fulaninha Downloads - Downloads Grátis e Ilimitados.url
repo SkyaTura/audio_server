@@ -1,0 +1,16 @@
+[DEFAULT]
+BASEURL=http://fulaninha-downloads.blogspot.com/
+[DOC#220]
+BASEURL=http://www.google.com/reviews/polls/display/6250557287787366428/blogger_template/run_app?txtclr=%23000000&lnkclr=%23C94093&chrtclr=%23C94093&font=normal+normal+110%25+Trebuchet%2C+Trebuchet+MS%2C+Arial%2C+sans-serif&hideq=true&purl=http%3A%2F%2Ffulaninha-downloads.blogspot.com%2F&u_java=true&u_h=768&u_w=1024&u_cd=32&u_tz=-180&u_p=done
+ORIGURL=http://www.google.com/reviews/polls/display/6250557287787366428/blogger_template/run_app?txtclr=%23000000&lnkclr=%23C94093&chrtclr=%23C94093&font=normal+normal+110%25+Trebuchet%2C+Trebuchet+MS%2C+Arial%2C+sans-serif&hideq=true&purl=http%3A%2F%2Ffulaninha-downloads.blogspot.com%2F
+[DOC#220_commframe]
+BASEURL=res://ieframe.dll/dnserror.htm
+ORIGURL=http://http://fulaninha-downloads.blogspot.com//robots.txt#234
+[InternetShortcut]
+URL=http://fulaninha-downloads.blogspot.com/
+IDList=
+IconFile=C:\WINDOWS\system32\SHELL32.dll
+HotKey=0
+IconIndex=86
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2

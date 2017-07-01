@@ -1,12 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-  <div class="jumbotron text-center">
-    <h1>Welcome to wizard listening</h1>
-  </div>
+  <!-- <div class="jumbotron text-center"> -->
+      <!-- <h1>Welcome to wizard listening</h1> -->
 
-  <audio controls autoplay="auto" width="900">
-    <source src="/static/{{folder}}/{{file}}" type="audio/mpeg">
-      Seu navegador não suporta execução de mp3, tente novamente usando o google chrome ou o mozilla firefox.
-  </audio>
+  <!-- </div> -->
+  <div id='content'>
+    <p id='texto'> Você está ouvindo {{file[0:filesome_var|length-4]}} </p>
+    <audio controls autoplay="auto">
+      <source src="/static/{{folder}}/{{file}}" type="audio/mpeg">
+        Seu navegador não suporta execução de mp3, tente novamente usando o google chrome ou o mozilla firefox.
+    </audio>
+  </div>
 {% endblock %}

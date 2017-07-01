@@ -3,64 +3,228 @@
   <head>
     <meta charset="utf-8">
     <title>Wizard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/static/css/w3.css"> -->
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="/static/script.js"></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="/static/js/script.js"></script>
+
+    <link rel="icon" href="/static/eagle.jpg">
 
   </head>
   <body>
 
     <div class="container">
       {% include '_messages.html' %}
+
+      <img id="logo-wiz" src="/static/logo-wizard.jpg" alt="logo wizard">
+
       {% block body %}{% endblock %}
+
+
+      <div id='cssmenu'>
+        <ul>
+           <li class='active has-sub'><a href='#'><span>English</span></a>
+              <ul>
+                 <li class='has-sub'><a href='#'><span>W2</span></a>
+                     <li class='has-sub'><a href='#'><span>W4</span></a>
+                         <ul>
+                           {% for section in data %}
+                               {% for s in section['sectionList'] %}
+                                <li><a href='/play/{{ s['audio'] }}/'><span>{{ s['name'] }}</span></a></li>
+                               {% endfor %}
+                           {% endfor %}
+                         </ul>
+                     </li>
+                    <ul>
+                      {% for section in data %}
+                          {% for s in section['sectionList'] %}
+                           <li><a href='/play/{{ s['audio'] }}/'><span>{{ s['name'] }}</span></a></li>
+                          {% endfor %}
+                      {% endfor %}
+                       <!-- <li><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L1</span></a></li>
+                       <li class='last'><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L2</span></a></li> -->
+                    </ul>
+                 </li>
+                 <li class='has-sub'><a href='#'><span>W4</span></a>
+                    <ul>
+                       <li><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L1</span></a></li>
+                       <li class='last'><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L2</span></a></li>
+                    </ul>
+                 </li>
+              </ul>
+           </li>
+
+           <li class='active has-sub'><a href='#'><span>Français</span></a>
+              <ul>
+                 <li class='has-sub'><a href='#'><span>W2</span></a>
+                    <ul>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L1</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L2</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L3</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L4</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L5</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L6</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L7</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L8</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L9</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L10</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L11</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L12</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L13</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L14</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L15</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L16</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L17</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L18</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L19</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L20</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L21</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L22</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L23</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L24</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L25</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L26</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L27</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L28</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L29</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L30</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L31</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L32</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L33</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L34</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L35</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L36</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L37</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L38</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L39</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L40</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L41</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L42</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L43</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L44</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L45</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L46</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L47</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L48</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L49</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L50</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L51</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L52</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L53</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L54</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L55</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L56</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L57</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L58</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L59</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L60</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R1</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R2</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R3</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R4</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R5</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R6</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R7</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R8</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R9</span></a></li>
+                       <li class='last'><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R10</span></a></li>
+                    </ul>
+                 </li>
+                 <li class='has-sub'><a href='#'><span>W4</span></a>
+                    <ul>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L1</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L2</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L3</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L4</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L5</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L6</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L7</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L8</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L9</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L10</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L11</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L12</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L13</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L14</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L15</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L16</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L17</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L18</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L19</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L20</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L21</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L22</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L23</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L24</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L25</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L26</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L27</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L28</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L29</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L30</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L31</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L32</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L33</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L34</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L35</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L36</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L37</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L38</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L39</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L40</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L41</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L42</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L43</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L44</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L45</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L46</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L47</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L48</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L49</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L50</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L51</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L52</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L53</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L54</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L55</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L56</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L57</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L58</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L59</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L60</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R1</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R2</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R3</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R4</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R5</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R6</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R7</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R8</span></a></li>
+                       <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R9</span></a></li>
+                       <li class='last'><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>R10</span></a></li>
+                    </ul>
+                 </li>
+              </ul>
+           </li>
+
+        </ul>
+      </div>
+
+
+      <br><br><br><br><br><br><br><br><br>
+
     </div>
 
-    <div id='cssmenu'>
-    <ul>
-       <li class='active has-sub'><a href='#'><span>English</span></a>
-          <ul>
-             <li class='has-sub'><a href='#'><span>W2</span></a>
-                <ul>
-                   <li><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L1</span></a></li>
-                   <li class='last'><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L2</span></a></li>
-                </ul>
-             </li>
-             <li class='has-sub'><a href='#'><span>W4</span></a>
-                <ul>
-                   <li><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L1</span></a></li>
-                   <li class='last'><a href='/play/ACDC_BIB/06_ac-dc_-_back_in_black-cruelty.mp3/'><span>L2</span></a></li>
-                </ul>
-             </li>
-          </ul>
-       </li>
-
-       <li class='active has-sub'><a href='#'><span>Français</span></a>
-          <ul>
-             <li class='has-sub'><a href='#'><span>W2</span></a>
-                <ul>
-                   <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L1</span></a></li>
-                   <li class='last'><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L2</span></a></li>
-                </ul>
-             </li>
-             <li class='has-sub'><a href='#'><span>W4</span></a>
-                <ul>
-                   <li><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L1</span></a></li>
-                   <li class='last'><a href='/play/ACDC_HV/05 - T.N.T..mp3/'><span>L2</span></a></li>
-                </ul>
-             </li>
-          </ul>
-       </li>
-
-    </ul>
-    </div>
 
 
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="/static/js/bootstrap.min.js"></script>
     <!-- <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script> -->
     <!-- <script type="text/javascript">
       CKEDITOR.replace('editor')
